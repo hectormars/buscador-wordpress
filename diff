@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Buscador Interno</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      line-height: 1.6;
+    }
+    #buscador {
+      padding: 10px;
+      width: 60%;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    button {
+      padding: 10px 15px;
+      margin-left: 5px;
+      background-color: #0073e6;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #005bb5;
+    }
+    .resultado {
+      background-color: yellow;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <h1>Buscador en la Página</h1>
+  <input type="text" id="buscador" placeholder="Escribe para buscar...">
+  <button onclick="buscarPalabra()">Buscar</button>
+
+  <script>
+    function buscarPalabra() {
+      let palabra = document.getElementById("buscador").value.trim();
+      if (!palabra) {
+        alert("Por favor, escribe una palabra para buscar");
+        return;
+      }
+
+      // Buscar en la página usando la función nativa del navegador
+      if (!window.find(palabra)) {
+        alert("No se encontró la palabra: " + palabra);
+      }
+    }
+  </script>
+
+  <p>
+    Este es un texto de ejemplo. Aquí puedes buscar palabras y te llevará a la coincidencia.
+  </p>
+  <p>
+    Puedes cambiar este contenido por el texto real que quieras buscar.
+  </p>
+</body>
+</html>
